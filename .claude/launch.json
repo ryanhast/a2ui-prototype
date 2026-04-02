@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "a2ui-dev",
+      "runtimeExecutable": "/Users/ryanhastingsair/.local/node/bin/node",
+      "runtimeArgs": ["server.mjs"],
+      "port": 5190,
+      "cwd": "/Users/ryanhastingsair/Documents/claude/a2ui-prototype"
+    }
+  ]
+}
