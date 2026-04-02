@@ -1,5 +1,6 @@
 import { useState, useCallback, useRef, useEffect } from "react";
 import { queryA2UI } from "./api/query";
+import { EXAMPLE_PROMPTS } from "./api/mockData";
 import LayoutRouter from "./router/LayoutRouter";
 import BlueprintInspector from "./inspector/BlueprintInspector";
 
@@ -127,6 +128,44 @@ export default function App() {
             }}>
               Ask me anything about your business.
             </p>
+            <div style={{
+              display: "flex",
+              flexWrap: "wrap",
+              justifyContent: "center",
+              gap: 8,
+              marginTop: 16,
+              maxWidth: 480,
+            }}>
+              {EXAMPLE_PROMPTS.map((ex) => (
+                <button
+                  key={ex}
+                  onClick={() => handleSubmit(ex)}
+                  style={{
+                    fontFamily: T.sans,
+                    fontSize: 13,
+                    fontWeight: 400,
+                    color: "#444",
+                    backgroundColor: "#fff",
+                    border: "1px solid #e0e0e0",
+                    borderRadius: 9999,
+                    padding: "8px 16px",
+                    cursor: "pointer",
+                    transition: "background-color 150ms ease, border-color 150ms ease",
+                    whiteSpace: "nowrap",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = "#f5f5f5";
+                    e.currentTarget.style.borderColor = "#ccc";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = "#fff";
+                    e.currentTarget.style.borderColor = "#e0e0e0";
+                  }}
+                >
+                  {ex}
+                </button>
+              ))}
+            </div>
           </div>
         ) : (
           /* Results */
